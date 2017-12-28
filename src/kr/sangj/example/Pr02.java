@@ -2,7 +2,7 @@ package kr.sangj.example;
 
 public class Pr02 {
 
-	int a,b,c;
+	public int a,b,c;
 	
 	public Pr02(int a, int b, int c) {
 		

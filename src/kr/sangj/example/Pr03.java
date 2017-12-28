@@ -2,7 +2,7 @@ package kr.sangj.example;
 
 public class Pr03 {
 
-	int n = 0;
+	public int n = 0;
 	
 	public Pr03(int n) {
 		
