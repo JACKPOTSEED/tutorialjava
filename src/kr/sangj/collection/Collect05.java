@@ -5,31 +5,21 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Collect05<T> implements Comparable<T> {
+public class Collect05 {
 
-	public static void main(String args[]) {
+	Map hashMap = new HashMap<String,Object>();
+	
+	public void hashMapInit() {
 		
-		Collect05 collect05 = new Collect05();
-		
-		collect05.print();
+		hashMap.put("이상정", 23);
+		hashMap.put("신선호", 24);
+		hashMap.put("우가인", 20);		
 	}
+	
 	public void print() {
 		
-		Map testMap = new TreeMap<String,Object>();
-				
-		testMap.put("노트북", 1);
-		testMap.put("모니터", 2);
-		testMap.put("마우스", 3);
-		
-		System.out.println("testMap : " + testMap);
+		hashMapInit();
+		System.out.println("hashMap 테스트");
+		System.out.println(hashMap);
 	}
-	@Override
-	public int compareTo(T o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	
-
-	
 }

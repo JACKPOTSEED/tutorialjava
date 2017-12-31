@@ -11,22 +11,19 @@ public class Collect04 {
 	//is empty
 	//linkedlist arraylist vector Â÷ÀÌ
 	//LinkedhashMap TreeMap HashMap Â÷ÀÌ
+	Set<String> set = new HashSet<String>();	
+	Set<String> treeSet = new TreeSet<String>();
+	Set<String> linkSet= new LinkedHashSet<String>();
 	
-	public void print() {
-	
-		Set set = new HashSet<String>();
+	public void hashSetInit() {
 		
 		set.add("µþ±â");
 		set.add("°ù°¨");
 		set.add("¹Ù³ª³ª");
 		set.add("¿ë°ú");
-		
-		System.out.println("set : " + set);
 	}
 	
-	public void print2() {
-		
-		Set treeSet = new TreeSet<String>();
+	public void treeSetInit() {
 		
 		treeSet.add("µþ±â");
 		treeSet.add("°ù°¨");
@@ -34,13 +31,9 @@ public class Collect04 {
 		treeSet.add("¿ë°ú");
 		treeSet.add("°¡°ú");
 		treeSet.add("Èå°ú");
-		
-		System.out.println("treeSet : " + treeSet);
 	}
 	
-	public void print3() {
-		
-		Set linkSet= new LinkedHashSet<String>();
+	public void linkedHashSetInit() {
 		
 		linkSet.add("µþ±â");
 		linkSet.add("°ù°¨");
@@ -48,7 +41,16 @@ public class Collect04 {
 		linkSet.add("¿ë°ú");
 		linkSet.add("°¡°ú");
 		linkSet.add("Èå°ú");
-		
-		System.out.println("linkSet : " + linkSet);
 	}
+	
+	public void print() {
+	
+		hashSetInit();
+		treeSetInit();
+		linkedHashSetInit();
+		
+		System.out.println("set : " + set);
+		System.out.println("treeSet : " + treeSet);
+		System.out.println("linkSet : " + linkSet);
+	}	
 }

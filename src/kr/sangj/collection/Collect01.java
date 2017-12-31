@@ -3,14 +3,11 @@ package kr.sangj.collection;
 import java.util.ArrayList;
 
 public class Collect01 {
+
+	ArrayList<String> list = new ArrayList<String>();
+	StringBuilder sb = new StringBuilder();
 	
-	/**
-	 * 과일이름을 ArrayList에 넣어서 합치기
-	 */
-	public void print() {
-			
-		ArrayList<String> list = new ArrayList<String>();
-		StringBuilder sb = new StringBuilder();
+	public void strJoin() {
 		
 		list.add("포도");
 		list.add("복숭아");
@@ -22,8 +19,13 @@ public class Collect01 {
 			
 			sb.append(list.get(i));
 		}
-		
-		System.out.println(sb.toString());
-		
-	}	
+	}
+	
+	public void print() {
+
+		strJoin();
+			
+		System.out.println("Stringbuilder를 이용한 문자열 합치기");
+		System.out.println(sb.toString());	
+	}		
 }

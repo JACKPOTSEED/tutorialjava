@@ -1,4 +1,4 @@
-package string_1226;
+package kr.sangj.string;
 
 public class String02 {
 

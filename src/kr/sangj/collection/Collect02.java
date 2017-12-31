@@ -7,21 +7,26 @@ import java.util.Vector;
 
 public class Collect02 {
 
-	public void print() {
+	List<String> list = new ArrayList<String>();
+	
+	public void listInit() {
 		
-		List list = new ArrayList<String>();
-					
 		list.add("포도");
 		list.add("복숭아");
 		list.add("딸기");
 		list.add("바나나");
-		list.add("감");		
+		list.add("감");	
+	}
+	
+	public void print() {
+		
+		listInit();							
 			
 		System.out.println("list : " + list);
 		list.remove(2);
 		System.out.println("list : " + list);
 		
-		List list2 = new ArrayList<String>();
+		List<String> list2 = new ArrayList<String>();
 		list2 = list.subList(0,3);
 		System.out.println("list2 : " + list2);
 		
