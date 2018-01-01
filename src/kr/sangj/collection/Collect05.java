@@ -7,7 +7,7 @@ import java.util.TreeMap;
 
 public class Collect05 {
 
-	Map hashMap = new HashMap<String,Object>();
+	HashMap<String,Object> hashMap = new HashMap<String,Object>();
 	
 	public void hashMapInit() {
 		

@@ -1,5 +1,6 @@
 package kr.sangj.main;
 
+import java.awt.Toolkit;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,6 +9,7 @@ import kr.sangj.abstaraction.abstract01.Shape;
 import kr.sangj.abstaraction.abstract02.Hello;
 import kr.sangj.abstaraction.abstract02.Ihello;
 import kr.sangj.array.Array01;
+import kr.sangj.capsulation.Capsule01;
 import kr.sangj.collection.Collect01;
 import kr.sangj.collection.Collect02;
 import kr.sangj.collection.Collect03;
@@ -22,11 +24,18 @@ import kr.sangj.example.Pr04;
 import kr.sangj.example.Pr05;
 import kr.sangj.example.Pr06;
 import kr.sangj.exception.Exception01;
+import kr.sangj.exception.Exception02;
+import kr.sangj.exception.Exception03;
+import kr.sangj.exception.UserException;
 import kr.sangj.polymorphism.poly01.BBB;
 import kr.sangj.polymorphism.poly02.Am;
 import kr.sangj.polymorphism.poly02.Bm;
 import kr.sangj.polymorphism.poly02.Cm;
 import kr.sangj.question.Question01;
+import kr.sangj.thread.threadTest01.RunnableTest;
+import kr.sangj.thread.threadTest01.Thread01;
+import kr.sangj.thread.threadTest02.BeepTask;
+
 
 /**
  * @author sangj
@@ -142,11 +151,40 @@ public class Main {
 		collect07.print();
 		
 		/**
-		 * 예외처리
-		 * NullPointerException
+		 * 예외처리 01
+		 * 
 		 */
 		Exception01 exception01 = new Exception01();
 		exception01.print();
+		
+		/**
+		 * 예외발생 시켜보기
+		 */
+		Exception02 exception02 = new Exception02();
+		
+		try {
+			
+			exception02.print();
+			
+		} catch (UserException e) {
+			
+			System.out.println(e.getMessage());
+		}
+		
+		/**
+		 * 예외처리 03
+		 * Null 방지 코드
+		 */		
+		Exception03 exception03 = new Exception03();
+		try {
+			
+			exception03.print();
+			
+		} catch (Exception e) {
+			
+			System.out.println("ERRORERRORERRORERRORERRORERROR");			
+		}
+		
 		
 		/**
 		 * 상속과 오버라이딩  오버로딩
@@ -157,7 +195,7 @@ public class Main {
 		bBB.print(18);
 		
 		/**
-		 * 객체의 형변환
+		 * 객체의 형변환 과 오버라이딩
 		 */
 		Am r = new Am();
 		r.print();		
@@ -184,5 +222,77 @@ public class Main {
 		/*Hello hello = new Hello();*/
 		Ihello hello = new Hello();
 		hello.sayHello("이상정");
+		
+		/**
+		 * 캡슐화 예제
+		 */
+		Capsule01 capsule01 = new Capsule01("이상정", "23", "남자");
+		System.out.println(capsule01.toString());
+		capsule01.print();	
+		
+		/**
+		 * 쓰레드 예제 01
+		 */
+		RunnableTest runnableTest = new RunnableTest();
+		Thread t= new Thread(runnableTest);
+		
+		Thread01 thread01 = new Thread01();
+		
+		t.start();			
+		thread01.start();
+		
+		/**
+		 * 쓰레드 예제 2.0
+		 */
+		/*Toolkit toolkit = Toolkit.getDefaultToolkit();
+				
+			for (int i = 0; i < 5; i++) {
+				
+				toolkit.beep();
+				
+				try {
+					
+					Thread.sleep(500);
+					
+				} catch (InterruptedException e) {
+					
+					System.out.println("쓰레드 에러");
+				}
+			}
+			
+			for (int i = 0; i < 5; i++) {
+				
+				System.out.println("띵띵띵");
+				
+				try {
+					
+					Thread.sleep(500);
+					
+				} catch (InterruptedException e) {
+
+					e.printStackTrace();
+				}
+			}*/
+		
+		/**
+		 * 쓰레드 예제 2.5
+		 */		
+		/*Runnable beepTask = new BeepTask();
+		Thread thread = new Thread(beepTask);
+		thread.start();
+		
+		for (int i = 0; i < 5; i++) {
+			
+			System.out.println("띵");
+		
+			try {
+				
+				Thread.sleep(500);
+				
+			} catch (InterruptedException e) {
+
+				System.out.println("쓰레드 에러");
+			}
+		}*/		
 	}		
 }
