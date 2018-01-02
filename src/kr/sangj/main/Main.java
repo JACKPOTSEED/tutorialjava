@@ -17,6 +17,8 @@ import kr.sangj.collection.Collect04;
 import kr.sangj.collection.Collect05;
 import kr.sangj.collection.Collect06;
 import kr.sangj.collection.Collect07;
+import kr.sangj.collection.Collect08;
+import kr.sangj.collection.Collect09;
 import kr.sangj.example.Pr01;
 import kr.sangj.example.Pr02;
 import kr.sangj.example.Pr03;
@@ -151,6 +153,20 @@ public class Main {
 		collect07.print();
 		
 		/**
+		 * Stack 예제
+		 * 후입선출
+		 */
+		Collect08 collect08 = new Collect08();
+		collect08.print();
+		
+		/**
+		 * Queue 예제
+		 * 선입선출
+		 */
+		Collect09 Collect09 = new Collect09();
+		Collect09.print();
+		
+		/**
 		 * 예외처리 01
 		 * 
 		 */
@@ -232,17 +248,21 @@ public class Main {
 		
 		/**
 		 * 쓰레드 예제 01
+		 * 쓰레드 생성 두가지 방법
 		 */
 		RunnableTest runnableTest = new RunnableTest();
 		Thread t= new Thread(runnableTest);
 		
 		Thread01 thread01 = new Thread01();
 		
+		System.out.println(thread01.getName());
+		
 		t.start();			
 		thread01.start();
 		
 		/**
 		 * 쓰레드 예제 2.0
+		 * 메인쓰레드 실행
 		 */
 		/*Toolkit toolkit = Toolkit.getDefaultToolkit();
 				
@@ -276,9 +296,11 @@ public class Main {
 		
 		/**
 		 * 쓰레드 예제 2.5
+		 * thread와 main 쓰레드 실행
 		 */		
 		/*Runnable beepTask = new BeepTask();
 		Thread thread = new Thread(beepTask);
+				
 		thread.start();
 		
 		for (int i = 0; i < 5; i++) {
@@ -293,6 +315,6 @@ public class Main {
 
 				System.out.println("쓰레드 에러");
 			}
-		}*/		
+		}	*/	
 	}		
 }

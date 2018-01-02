@@ -1,6 +1,7 @@
 package kr.sangj.main;
 
 import kr.sangj.question.Question01;
+import kr.sangj.question.Question04;
 import kr.sangj.question.question02.People;
 import kr.sangj.question.question03.HashMapExam;
 
@@ -29,5 +30,13 @@ public class QMain {
 		 */
 		HashMapExam HashMapExam = new HashMapExam();
 		HashMapExam.print();
+		
+		Question04 question04 = new Question04();
+		question04.mapInit();
+		question04.listAdd();
+		System.out.println(question04.toString());
+		
+		Integer i = 10;
+		
 	}
 }
