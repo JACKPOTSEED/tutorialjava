@@ -1,5 +1,6 @@
 package kr.sangj.main;
 
+import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,10 +34,18 @@ import kr.sangj.polymorphism.poly01.BBB;
 import kr.sangj.polymorphism.poly02.Am;
 import kr.sangj.polymorphism.poly02.Bm;
 import kr.sangj.polymorphism.poly02.Cm;
+import kr.sangj.polymorphism.poly03.Child;
+import kr.sangj.polymorphism.poly03.Parent;
 import kr.sangj.question.Question01;
 import kr.sangj.thread.threadTest01.RunnableTest;
 import kr.sangj.thread.threadTest01.Thread01;
 import kr.sangj.thread.threadTest02.BeepTask;
+import kr.sangj.thread.threadTest04.ThreadA;
+import kr.sangj.thread.threadTest04.ThreadB;
+import kr.sangj.thread.threadTest04.WorkObject;
+import kr.sangj.thread.threadTest05.ThreadI;
+import kr.sangj.thread.threadTest05.ThreadJ;
+
 
 
 /**
@@ -223,6 +232,33 @@ public class Main {
 		r.print();
 		
 		/**
+		 * 객체형변환과 상위클래스 객체변수에 하위클래스 참조시 스코프
+		 */
+		Child child = new Child();
+		System.out.println(child.i);
+		System.out.println(child.pa);
+		child.parentPrint();
+		child.childPrint();
+		child.print();
+		
+		Parent child2 = new Child();
+		System.out.println(child2.i);
+		System.out.println(child2.pa);
+		child2.parentPrint();
+		child.childPrint();
+		child2.print();
+		
+		Parent parent = new Parent();
+		System.out.println(parent.i);
+		System.out.println(parent.pa);
+		parent.print();
+		
+		/*Child child3 = (Child) parent;
+		child3.childPrint();
+		System.out.println(child3.i);
+		child3.print();*/
+		
+		/**
 		 * 추상클래스와 추상메소드 사용
 		 */
 		Circle circle = new Circle();
@@ -230,7 +266,9 @@ public class Main {
 		circle.computerArea(5.0, 5.0);
 		
 		Shape s = new Circle();
+		Shape c = new kr.sangj.abstaraction.abstract01.Rectangle();
 		s.draw();
+		c.draw();
 		
 		/**
 		 * 인터페이스 사용
@@ -250,7 +288,7 @@ public class Main {
 		 * 쓰레드 예제 01
 		 * 쓰레드 생성 두가지 방법
 		 */
-		RunnableTest runnableTest = new RunnableTest();
+		/*RunnableTest runnableTest = new RunnableTest();
 		Thread t= new Thread(runnableTest);
 		
 		Thread01 thread01 = new Thread01();
@@ -258,7 +296,7 @@ public class Main {
 		System.out.println(thread01.getName());
 		
 		t.start();			
-		thread01.start();
+		thread01.start();*/
 		
 		/**
 		 * 쓰레드 예제 2.0
@@ -316,5 +354,123 @@ public class Main {
 				System.out.println("쓰레드 에러");
 			}
 		}	*/	
+		
+		/**
+		 * 쓰레드 예제 3.0
+		 * join 예제
+		 */
+		
+		/*Thread thread001 = new Thread(new Runnable() {
+			
+			public void print() {
+
+					for (int i = 0; i < 5; i++) {
+						
+						System.out.println("i : " + i);
+					}
+			}
+			
+			@Override
+			public  void run() {
+				
+				print();
+			}
+		});
+		
+		Thread thread002 = new Thread(new Runnable() {			
+			
+			public void print() {
+				
+					for (int i = 0; i < 5; i++) {
+						
+						System.out.println("j : " + i);
+					}	
+			}
+			
+			@Override
+			public  void run() {
+				
+				print();
+			}
+		});
+		
+		Thread thread003 = new Thread(new Runnable() {
+			
+			public void print() {
+				
+				for (int i = 0; i < 5; i++) {
+					
+					System.out.println("k : " + i);
+				}
+		}
+		
+		@Override
+		public  void run() {
+			
+			print();
+		}
+		});
+
+		thread001.start();
+		
+		try {
+			
+			thread001.join();
+			
+		} catch (InterruptedException e) {
+
+			e.printStackTrace();
+			
+		}
+		
+		thread002.start();
+		thread003.start();
+		
+		*//**
+		 * 쓰레드 4
+		 * 공유객체와 wait notify
+		 *//*
+		
+		WorkObject workObject = new WorkObject();
+		
+		ThreadA threadA = new ThreadA(workObject);
+		ThreadB threadB = new ThreadB(workObject);
+		
+		threadA.start();
+		threadB.start();*/
+		
+		/**
+		 * 쓰레드 5
+		 * yield의 실행순서
+		 * 실행중인 다른 쓰레드에게 양보하고 실행대기상태가 된다. 즉 한번만 양보한다.
+		 */
+		
+		/*ThreadI threadI = new ThreadI();
+		ThreadJ threadJ = new ThreadJ();
+		
+		System.out.println(threadI.getPriority());
+		System.out.println(threadJ.getPriority());
+		
+		threadI.start();		
+		threadJ.start();
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+		
+			e.printStackTrace();
+		}
+		
+		threadI.work = false;
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+		
+			e.printStackTrace();
+		}
+		System.out.println("==============");
+		
+		threadI.work = true;*/
 	}		
 }

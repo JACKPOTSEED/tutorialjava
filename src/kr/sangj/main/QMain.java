@@ -2,6 +2,7 @@ package kr.sangj.main;
 
 import kr.sangj.question.Question01;
 import kr.sangj.question.Question04;
+import kr.sangj.question.Question05.Question05;
 import kr.sangj.question.question02.People;
 import kr.sangj.question.question03.HashMapExam;
 
@@ -38,5 +39,10 @@ public class QMain {
 		
 		Integer i = 10;
 		
+		/**
+		 * ArrayList 객체 자료형 넣어보기
+		 */
+		Question05 question05 = new Question05();
+		question05.print();
 	}
 }

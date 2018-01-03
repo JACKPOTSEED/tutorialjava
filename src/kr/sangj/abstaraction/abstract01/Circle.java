@@ -7,7 +7,7 @@ public class Circle extends Shape {
 		
 		System.out.println("원을 그리는 기능");
 	}
-
+	
 	@Override
 	public void computerArea(double a, double b) {
 

@@ -7,6 +7,7 @@ import java.util.Map;
 
 public class Question04 {
 
+	// TODO List<Map> 제네릭 두번 사용 하는버 찾아보기
 	List<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
 	HashMap<String,Object> resMap = new HashMap<String,Object>();
 	
