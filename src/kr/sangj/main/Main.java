@@ -1,10 +1,5 @@
 package kr.sangj.main;
 
-import java.awt.Rectangle;
-import java.awt.Toolkit;
-import java.util.HashMap;
-import java.util.Map;
-
 import kr.sangj.abstaraction.abstract01.Circle;
 import kr.sangj.abstaraction.abstract01.Shape;
 import kr.sangj.abstaraction.abstract02.Hello;
@@ -36,15 +31,6 @@ import kr.sangj.polymorphism.poly02.Bm;
 import kr.sangj.polymorphism.poly02.Cm;
 import kr.sangj.polymorphism.poly03.Child;
 import kr.sangj.polymorphism.poly03.Parent;
-import kr.sangj.question.Question01;
-import kr.sangj.thread.threadTest01.RunnableTest;
-import kr.sangj.thread.threadTest01.Thread01;
-import kr.sangj.thread.threadTest02.BeepTask;
-import kr.sangj.thread.threadTest04.ThreadA;
-import kr.sangj.thread.threadTest04.ThreadB;
-import kr.sangj.thread.threadTest04.WorkObject;
-import kr.sangj.thread.threadTest05.ThreadI;
-import kr.sangj.thread.threadTest05.ThreadJ;
 
 
 

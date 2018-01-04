@@ -19,8 +19,8 @@ public class IoStream08 {
 		
 		try {
 			
-			fis = new FileInputStream("C:/IoTest/finn.jpg");
-			fos = new FileOutputStream("C:/IoTest/copyFinn.jpg");
+			fis = new FileInputStream("C:/IoTest/finn.png");
+			fos = new FileOutputStream("C:/IoTest/copyFinn.png");
 			
 			while ((data = fis.read()) != -1) {
 				
