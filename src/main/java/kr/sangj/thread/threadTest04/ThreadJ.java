@@ -1,14 +1,23 @@
 package main.java.kr.sangj.thread.threadTest04;
 
 public class ThreadJ extends Thread{
-
+	
+	public boolean stop = false;
+	public boolean work = true;
+		
 	@Override
 	public void run() {
 		
-		for (int i = 0; i < 10; i++) {
+		while(!stop) {
 			
-			System.out.println("threadJ : " + i);
-		}
+			if (work) {
+				
+				System.out.println("threadKKK 작업내용");
+				
+			} else {
+				
+				Thread.yield();
+			}
+		}					
 	}
-
 }

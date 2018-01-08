@@ -15,7 +15,9 @@ public class IoStream01 {
 	
 	public void print() throws IOException {
 		
-		/*File file = new File("C:/IoTest/test.txt");
+		/* FileInputStream 의 매개변수로 file경로를 지정해주거나 Stirng 경로를 지정해줘도 가능하다.
+		 * 
+		 * File file = new File("C:/IoTest/test.txt");
 		InputStream  is = new FileInputStream(file);*/
 		
 		InputStream  is = new FileInputStream(directory);
@@ -23,23 +25,20 @@ public class IoStream01 {
 		try {
 					
 			int readByte;
-			
+					
 			while ((readByte= is.read()) != -1) {
-				
-				/*System.out.println("readByte : " + (char)readByte);*/
+							
 				System.out.write(readByte);
 			}
-			
-			/*InputStream is2 = new DataInputStream(is);					
-			OutputStream os = new FileOutputStream();*/
+
 		} catch (IOException e) {
 
 			e.printStackTrace();
+			
 		} finally {
+			
 			System.out.flush();
 			is.close();
-		}
-		
-	
+		}		
 	}
 }

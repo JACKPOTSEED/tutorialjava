@@ -11,11 +11,9 @@ public class ThreadI extends Thread{
 		while(!stop) {
 		
 			if (work) {
+								
+				System.out.println("ThreadI : 작업내용");
 				
-				for (int i = 0; i < 10; i++) {
-					
-					System.out.println("ThreadI : " + i);
-				}
 			} else {
 
 				Thread.yield();

@@ -4,11 +4,12 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 
 public class IoStream11 {
 
-	/* json 이나 xml 값 가져와서 map 이나 list로 만들엇 txt에 뿌린다음 txt읽기
+	/* TODO json 이나 xml 값 가져와서 map 이나 list로 만들엇 txt에 뿌린다음 txt읽기
 	 * 이예제에서 사용할 gson 익숙해지기
 	 * json jsonObjectString 개념 잡기
 	 * xml parser개념잡기
@@ -29,16 +30,17 @@ public class IoStream11 {
 			fr = new FileReader("C:/IoTest/test.txt");
 			br = new BufferedReader(fr);
 			
-			fw = new FileWriter("C:/IoTest/test.txt");
+			fw = new FileWriter("C:/IoTest/IoStream11.txt",true);
 			bw = new BufferedWriter(fw);
-			pw = new PrintWriter(bw);			
-			
+			pw = new PrintWriter(bw);								
+			 
 			while ((data = br.read()) != -1) {
 				
 				System.out.println("실행");
 				/*System.out.println((char)data);*/
-				/*pw.write(data);*/
-				pw.write("more more text");
+				pw.write(data);
+				/*pw.println("more more text");
+				pw.print("more more text");*/
 				System.out.println("저장완료");
 			}								
 			
@@ -46,9 +48,17 @@ public class IoStream11 {
 		} catch (Exception e) {
 
 		} finally {
+			try {
+				
+				br.close();
+				
+				pw.flush();
+				pw.close();
+				} catch (IOException e) {
+
+				e.printStackTrace();
+			}
 			
-			pw.flush();
-			pw.close();
 		}
 	}
 }

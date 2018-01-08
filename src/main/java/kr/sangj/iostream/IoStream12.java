@@ -14,8 +14,8 @@ public class IoStream12 {
 		
 		try {
 			
-			fi = new FileInputStream("C:/IoTest/test01.txt");
-			fo = new FileOutputStream("C:/IoTest/test03.txt");
+			fi = new FileInputStream("C:/IoTest/test.txt");
+			fo = new FileOutputStream("C:/IoTest/IoStream12.txt");
 			
 			while ((data = fi.read()) != -1) {
 				

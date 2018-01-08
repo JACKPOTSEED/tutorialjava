@@ -14,43 +14,17 @@ public class WebsServer03 {
 		
 		ServerSocket serverSocket  = null;
 		
+		Thread.currentThread().setName("Main-Thread");		
+		
 		try {
 
 			serverSocket = new ServerSocket();
-			serverSocket.bind(new InetSocketAddress("127.0.0.1", 5001));					
+						
+			new Thread(new AcceptThread(serverSocket)).start();
 			
-			while (true) {
-				
-				System.out.println("[연결기다림]");
-				Socket socket = serverSocket.accept();	
-				
-				InetSocketAddress isa = (InetSocketAddress) socket.getRemoteSocketAddress();				
-				System.out.println("[연결수락함]" + isa.getHostName());
-				
-				byte[] bytes = null;
-				String msg = "안녕클라이언트";
-				
-				InputStream is = socket.getInputStream();
-				
-				bytes = new byte[100];
-				
-				int readByteCount = is.read(bytes);
-				msg = new String(bytes,0,readByteCount,"UTF-8");
-				System.out.println("[메시지 받기 성공]" + msg);
-										
-			}
+			System.out.println("[" + Thread.currentThread().getName() + " 실행]");
+			
 		} catch (Exception e) {}
-		
-		if (!serverSocket.isClosed()) {
 			
-			try {
-				
-				serverSocket.close();
-				
-			} catch (IOException e) {
-			
-				e.printStackTrace();
-			}
-		}
 	}
 }

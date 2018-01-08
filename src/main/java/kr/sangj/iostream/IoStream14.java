@@ -3,7 +3,7 @@ package main.java.kr.sangj.iostream;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class IoStrea14 {
+public class IoStream14 {
 
 	public void print() {
 		

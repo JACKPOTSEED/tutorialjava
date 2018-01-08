@@ -5,12 +5,11 @@ import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 
-public class Client03 {
+public class Client03 {		
 	
 	public static void main(String[] args) {
-		
+				
 		Socket socket = null;
-		
 		try {
 
 			socket = new Socket();

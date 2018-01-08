@@ -8,34 +8,30 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class IoStream02 {
-
-	String directory = "C:/IoTest/test.txt";	
-	String directory2 = "C:/IoTest/wtest.txt";	
 	
 	public void print() throws IOException {
 	
-		InputStream  is = new FileInputStream(directory);
-		OutputStream os = new FileOutputStream(directory2);
+		InputStream  is = new FileInputStream("C:/IoTest/test.txt");
+		OutputStream os = new FileOutputStream("C:/IoTest/IoStream02.txt");
 		
 		try {
 		
-			int readByte = 0;
-			byte[] readBytes = new byte[1];
+			int readByte = 0;			
 					
 			while ((readByte = is.read()) != -1) {
-				
-				System.out.write(readByte);
+								
 				os.write(readByte);
-			}		
+			}							
 			
 		} catch (IOException e) {
 
 			e.printStackTrace();
+			
 		} finally {
 			
-			System.out.flush();
-			os.flush();
 			is.close();
+			os.flush();
+			os.close();			
 		}
 	}
 }

@@ -5,8 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class IoStream05 {
-	
-	
+		
 	FileOutputStream fs = null;
 
 	public void print() {
@@ -15,12 +14,24 @@ public class IoStream05 {
 			
 			byte b[] = "14128583050".getBytes();			
 			
-			fs = new FileOutputStream("C:/IoTest/zzz.txt");
+			fs = new FileOutputStream("C:/IoTest/IoStream05.txt");
 			fs.write(b);
 			
 		} catch (IOException e) {
 
 			e.printStackTrace();
-		}		
+			
+		} finally {
+			
+			try {
+				
+				fs.flush();
+				fs.close();
+				
+			} catch (IOException e) {
+
+				e.printStackTrace();
+			}			
+		}
 	}
 }

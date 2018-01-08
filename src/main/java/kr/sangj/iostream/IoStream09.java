@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 
 public class IoStream09 {
 
-	public static void main(String[] args) {
+	public void print() {
 		
 		InputStream is = null;
 		PrintWriter pw = null;
@@ -16,8 +16,7 @@ public class IoStream09 {
 			is = new FileInputStream("C:/IoTest/test.txt");
 			DataInputStream in = new DataInputStream(is);
 			
-			int i = in.readInt();
-			double d = in.readDouble();			
+			int i = in.readInt();			
 			
 			System.out.println("i "+ i);
 			

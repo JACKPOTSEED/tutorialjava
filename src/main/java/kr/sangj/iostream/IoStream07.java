@@ -7,7 +7,7 @@ import java.io.Reader;
 
 public class IoStream07 {
 
-	String str = "C:\\IoTest\\zzz.txt";
+	String str = "C:\\IoTest\\test.txt";
 			
 	public void print() throws IOException {
 		

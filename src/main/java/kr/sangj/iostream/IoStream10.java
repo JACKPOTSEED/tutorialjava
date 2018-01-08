@@ -13,7 +13,7 @@ public class IoStream10 {
 		
 		try {
 			
-			pw = new PrintWriter(new FileOutputStream("C:/IoTest/FileTest/test133.txt"));
+			pw = new PrintWriter(new FileOutputStream("C:/IoTest/IoStream10.txt"));
 			pw.println("adflkaaaaaaaaaabbbbbbbbbb");
 			pw.print(123);
 			

@@ -6,7 +6,7 @@ import main.java.kr.sangj.question.Question05.Question05;
 import main.java.kr.sangj.question.question02.People;
 import main.java.kr.sangj.question.question03.HashMapExam;
 
-public class QMain {
+public class QuestionMain {
 
 	public static void main(String[] args) {
 		

@@ -15,7 +15,7 @@ public class IoStream13 {
 		
 		try {												
 			
-			fw = new PrintWriter(new BufferedWriter(new FileWriter("C:/IoTest/test03.txt",true)));
+			fw = new PrintWriter(new BufferedWriter(new FileWriter("C:/IoTest/test.txt",true)));
 								
 			/*fw.write("어려운예제어려운예제어려운예제어려운예제어려운예제어려운예제어려운예제어려운예제어려운예제어려운예제어려운예제어려운"
 					+ "어려운예제어려운예제어려운예제어려운예제어려운예제어려운예제어려운예제어려운예제어려운예제어려운예제어려운예제어려운"
