@@ -166,7 +166,7 @@ public class IoStreamMain {
 		/**
 		 * DataOutputStream 
 		 */
-		IoStream16 ioStream16 = new IoStream16();
-		ioStream16.dataWrite();
+		/*IoStream16 ioStream16 = new IoStream16();
+		ioStream16.dataWrite();*/
 	}	
 }

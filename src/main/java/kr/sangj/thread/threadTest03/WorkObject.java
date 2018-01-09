@@ -6,7 +6,7 @@ public class WorkObject {
 		
 		System.out.println("methoA의 작업실행");
 				
-		notify();
+		/*notify();*/
 				
 		try {			
 			

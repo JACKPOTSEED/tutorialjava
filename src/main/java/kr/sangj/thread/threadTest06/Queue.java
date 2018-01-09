@@ -1,5 +1,6 @@
 package main.java.kr.sangj.thread.threadTest06;
 
+import java.util.Arrays;
 import java.util.concurrent.SynchronousQueue;
 
 public class Queue<E> {

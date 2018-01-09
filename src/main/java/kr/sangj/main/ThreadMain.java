@@ -14,10 +14,12 @@ import main.java.kr.sangj.thread.threadTest04.ThreadI;
 import main.java.kr.sangj.thread.threadTest04.ThreadJ;
 import main.java.kr.sangj.thread.threadTest06.Queue;
 import main.java.kr.sangj.thread.threadTest06.ThreadAdd;
+import main.java.kr.sangj.thread.threadTest06.ThreadAdd2;
 import main.java.kr.sangj.thread.threadTest06.ThreadGet;
 import main.java.kr.sangj.thread.threadTest07.DataStack;
 import main.java.kr.sangj.thread.threadTest07.User1;
 import main.java.kr.sangj.thread.threadTest07.User2;
+import main.java.kr.sangj.thread.threadTest09.DemonExam;
 
 public class ThreadMain {
 
@@ -170,13 +172,13 @@ public class ThreadMain {
 		 * 공유객체와 wait notify
 		 */
 				
-		WorkObject workObject = new WorkObject();
+		/*WorkObject workObject = new WorkObject();
 		
 		ThreadA threadA = new ThreadA(workObject);		
 		ThreadB threadB = new ThreadB(workObject);
 		
 		threadA.start();
-		threadB.start();
+		threadB.start();*/
 		
 		/**
 		 * 쓰레드 5
@@ -255,15 +257,40 @@ public class ThreadMain {
 		 * Queue 쓰레드 예제
 		 */
 		
-		/*main.java.kr.sangj.thread.threadTest06.Queue<Integer> queue = new Queue<Integer>();
-		
+		Queue<Integer> queue = new Queue<Integer>();
+				
 		ThreadAdd threadAdd = new ThreadAdd();		
 		ThreadGet threadGet = new ThreadGet();
+		ThreadAdd2 threadAdd2 = new ThreadAdd2();
 		
 		threadAdd.setThreadAdd(queue);
 		threadGet.setThreadGet(queue);
+		threadAdd2.setThreadAdd(queue);
 		
 		threadAdd.start();			
-		threadGet.start();*/
+		threadGet.start();
+		//밑에 줄을 주석하면 무한 wait에 걸린다.
+		threadAdd2.start();				
+				
+		/**
+		 * 데몬쓰레드
+		 */
+		
+		/*DemonExam demonExam = new DemonExam();
+		
+		Thread t = new Thread(demonExam);
+		t.setDaemon(true);		
+		t.start();
+		
+		try {
+			
+			Thread.sleep(3000);
+			
+		} catch (InterruptedException e) {
+
+			e.printStackTrace();
+		}
+		
+		System.out.println("프로그램을 종료합니다.");*/
 	}
 }
