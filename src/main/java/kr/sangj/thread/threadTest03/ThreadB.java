@@ -16,5 +16,8 @@ public class ThreadB extends Thread {
 			
 			workObject.methodB();
 		}
+		
+		/*workObject.work = false;
+		workObject.wake();*/
 	}
 }

@@ -14,16 +14,20 @@ public class IoStreamNav02 {
 		Writer writer = null;
 		
 		int data = -1;
-		char[] cbuf = new char[100];
+		char[] cbuf = new char[2];
 		
 		try {
 			
 			reader = new FileReader("C:/IoTest/test.txt");
-			writer = new FileWriter("C:/IoTest/copytext123.txt");			
+			writer = new FileWriter("C:/IoTest/IoStreamNav02.txt");			
 			
 			while ((data = reader.read(cbuf)) != -1) {
 				
-				writer.write(data);
+				String str = new String(cbuf,0,2);
+				
+				System.out.println(str);
+				
+				writer.write(str);
 			}
 			
 			System.out.println("텍스트복사완료");

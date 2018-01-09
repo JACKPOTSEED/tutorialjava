@@ -2,6 +2,7 @@ package main.java.kr.sangj.network.network01;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
@@ -16,7 +17,7 @@ public class WebServer01 {
 		try {
 			
 			serverSocket = new ServerSocket();
-			serverSocket.bind(new InetSocketAddress("127.0.0.1", 5001));
+			serverSocket.bind(new InetSocketAddress("127.0.0.1", 7070));
 			
 			while (true) {
 				
@@ -29,8 +30,7 @@ public class WebServer01 {
 				byte[] bytes = null;
 				String msg = "안녕클라이언트";
 				
-				InputStream is = socket.getInputStream();
-				
+				InputStream is = socket.getInputStream();				
 				bytes = new byte[100];
 				
 				int readByteCount = is.read(bytes);

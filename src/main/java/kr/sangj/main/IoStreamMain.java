@@ -20,6 +20,12 @@ import main.java.kr.sangj.iostream.IoStream11;
 import main.java.kr.sangj.iostream.IoStream12;
 import main.java.kr.sangj.iostream.IoStream13;
 import main.java.kr.sangj.iostream.IoStream15;
+import main.java.kr.sangj.iostream.IoStream16;
+import main.java.kr.sangj.iostreamnav.IoStreamNav01;
+import main.java.kr.sangj.iostreamnav.IoStreamNav02;
+import main.java.kr.sangj.iostreamnav.IoStreamNav03;
+import main.java.kr.sangj.iostreamnav.IoStreamNav05;
+import main.java.kr.sangj.iostreamnav.IoStreamNav06;
 
 /**
  * @author sangj
@@ -119,5 +125,48 @@ public class IoStreamMain {
 		 */
 		/*IoStream15 ioStream15 = new IoStream15();
 		ioStream15.print();*/
+		
+		/**
+		 * InputStream OutputStream을 이용한 그림파일 복사
+		 * 생성자 매개변수 복사 파일명 (확장자 .jpg 고정)
+		 */
+		/*IoStreamNav01 IoStreamNav01 = new IoStreamNav01("dmo");
+		IoStreamNav01.copyImgFile();*/
+		
+		/**
+		 * Reader Writer 의 reader read(char[] c) Write 사용
+		 */
+		/*IoStreamNav02 ioStreamNav02 = new IoStreamNav02();
+		ioStreamNav02.copyTextFile();*/
+		
+		/**
+		 * 버퍼를 이용한 성능향상 텍스트파일 생성
+		 */
+		/*IoStreamNav03 ioStreamNav03 = new IoStreamNav03();
+		ioStreamNav03.editTextFile();*/
+		
+		/**
+		 * InputStream Reader BufferedReader 를 통한 stream to reader 사용
+		 */
+		/*IoStreamNav04 ioStreamNav04 = new IoStreamNav04();
+		ioStreamNav04.copyByteTextFile();*/
+		
+		/**
+		 * DataOutputStream 을 통한 writeInt 특정 자료형을 저장
+		 */
+		/*IoStreamNav05 ioStreamNav05 = new IoStreamNav05();
+		ioStreamNav05.printDataStream();*/
+		
+		/**
+		 * BufferedWriter FileWriter(file,true) 를 통한 수정 
+		 */		
+		/*IoStreamNav06 ioStreamNav06 = new IoStreamNav06();
+		ioStreamNav06.editAdd();*/
+		
+		/**
+		 * DataOutputStream 
+		 */
+		IoStream16 ioStream16 = new IoStream16();
+		ioStream16.dataWrite();
 	}	
 }

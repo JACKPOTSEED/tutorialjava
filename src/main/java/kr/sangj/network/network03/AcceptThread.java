@@ -43,10 +43,7 @@ public class AcceptThread implements Runnable{
 				
 				InetSocketAddress isa = (InetSocketAddress) socket.getRemoteSocketAddress();				
 				System.out.println("[연결수락함]" + isa.getHostName());
-				
-				
-				
-				
+														
 				Thread receiveThread = new Thread(new ReceiveThread(socket));
 											
 				receiveThread.start();

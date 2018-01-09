@@ -170,13 +170,13 @@ public class ThreadMain {
 		 * 공유객체와 wait notify
 		 */
 				
-		/*WorkObject workObject = new WorkObject();
+		WorkObject workObject = new WorkObject();
 		
-		ThreadA threadA = new ThreadA(workObject);
+		ThreadA threadA = new ThreadA(workObject);		
 		ThreadB threadB = new ThreadB(workObject);
 		
 		threadA.start();
-		threadB.start();*/
+		threadB.start();
 		
 		/**
 		 * 쓰레드 5
@@ -219,6 +219,7 @@ public class ThreadMain {
 		
 		User1 user1 = new User1();
 		user1.setDataStack(dataStack);
+				
 		user1.start();
 		
 		try {
@@ -232,6 +233,7 @@ public class ThreadMain {
 		
 		User2 user2 = new User2();
 		user2.setDataStack(dataStack);
+		
 		user2.start();*/
 		
 		/**
