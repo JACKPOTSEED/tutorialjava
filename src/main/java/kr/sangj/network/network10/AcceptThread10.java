@@ -30,9 +30,9 @@ public class AcceptThread10 implements Runnable{
 			
 			while (true) {
 				
-				//System.out.println("클라이언트 응답 대기중");
+				System.out.println("클라이언트 응답 대기중");
 				Socket socket = serverSocket.accept();
-				//System.out.println("서버에 클라이언트 들어옴");
+				System.out.println("서버에 클라이언트 들어옴");
 				
 				manager10.add(socket);
 				/*manager10.print();*/

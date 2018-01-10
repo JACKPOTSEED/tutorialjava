@@ -21,11 +21,14 @@ import main.java.kr.sangj.iostream.IoStream12;
 import main.java.kr.sangj.iostream.IoStream13;
 import main.java.kr.sangj.iostream.IoStream15;
 import main.java.kr.sangj.iostream.IoStream16;
+import main.java.kr.sangj.iostream.IoStream18;
+import main.java.kr.sangj.iostream.IoStream19;
 import main.java.kr.sangj.iostreamnav.IoStreamNav01;
 import main.java.kr.sangj.iostreamnav.IoStreamNav02;
 import main.java.kr.sangj.iostreamnav.IoStreamNav03;
 import main.java.kr.sangj.iostreamnav.IoStreamNav05;
 import main.java.kr.sangj.iostreamnav.IoStreamNav06;
+import main.java.kr.sangj.iostreamnav.IoStreamNav07.IoStreamNav07;
 
 /**
  * @author sangj
@@ -34,7 +37,7 @@ import main.java.kr.sangj.iostreamnav.IoStreamNav06;
 
 public class IoStreamMain {
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		
 		/**
 		 * InputStream FileInputStream 텍스트파일 Read()
@@ -168,5 +171,30 @@ public class IoStreamMain {
 		 */
 		/*IoStream16 ioStream16 = new IoStream16();
 		ioStream16.dataWrite();*/
-	}	
+		
+		/**
+		 * IoStream17 RandomAceessFile을 이용한 파일 영속성 처리 클래스 캡슐화
+		 */
+		
+		/**
+		 * ObjectInputOutputStream 예제1 다양한 객체를 쓰고 읽기 Serializable를 구현한 기본 자료형
+		 */
+		
+		/*IoStream18 ioStream18 = new IoStream18();
+		ioStream18.printObject();*/
+		
+		/**
+		 * DataInputOutputStream writeUTF readUTF 예제
+		 * TODO 하지만 값을 write할떄 맨처음에 쓰레기 값이 들어감 
+		 */ 
+		IoStream19 ioStream19 = new IoStream19();
+		ioStream19.dataIOStream();
+		
+		/**ObjectInputOutputStream 예제2 Serializable을 구현하고 있지 않은 클래스
+		 * 객체 직렬화와 trasient 예약어
+		 */
+		
+		/*IoStreamNav07 ioStreamNav07 = new IoStreamNav07();
+		ioStreamNav07.print();*/
+	}	 
 }

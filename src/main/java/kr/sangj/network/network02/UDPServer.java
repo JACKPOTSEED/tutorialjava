@@ -21,6 +21,7 @@ public class UDPServer {
 					ds.receive(dp);
 					String rs1 = new String(dp.getData());
 					
+					System.out.println("result : " + rs1);
 				} catch (IOException e) {
 
 					e.printStackTrace();
