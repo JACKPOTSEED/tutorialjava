@@ -12,6 +12,7 @@ import main.java.kr.sangj.iostream.IoStream02;
 import main.java.kr.sangj.iostream.IoStream03;
 import main.java.kr.sangj.iostream.IoStream04;
 import main.java.kr.sangj.iostream.IoStream05;
+import main.java.kr.sangj.iostream.IoStream06;
 import main.java.kr.sangj.iostream.IoStream07;
 import main.java.kr.sangj.iostream.IoStream08;
 import main.java.kr.sangj.iostream.IoStream09;
@@ -68,6 +69,15 @@ public class IoStreamMain {
 		 */
 		/*IoStream05 ioStream05 = new IoStream05();
 		ioStream05.print();*/
+		
+		/**
+		 * OutputStream Writer 의 차이
+		 * TODO 자바는 유니코드 기반의 문자표현을 하고 숫자를 인코딩하여서 값을 뽑는것에서
+		 * 차이가 있는것 같긴한데 많은 시간을 들여 공부해야 할 것 같음.
+		 */
+		
+		/*IoStream06 ioStream06 = new IoStream06();
+		ioStream06.print();*/
 		
 		/**
 		 * 디렉토리가 없으면 생성 mkdir()
@@ -187,8 +197,8 @@ public class IoStreamMain {
 		 * DataInputOutputStream writeUTF readUTF 예제
 		 * TODO 하지만 값을 write할떄 맨처음에 쓰레기 값이 들어감 
 		 */ 
-		IoStream19 ioStream19 = new IoStream19();
-		ioStream19.dataIOStream();
+		/*IoStream19 ioStream19 = new IoStream19();
+		ioStream19.dataIOStream();*/
 		
 		/**ObjectInputOutputStream 예제2 Serializable을 구현하고 있지 않은 클래스
 		 * 객체 직렬화와 trasient 예약어

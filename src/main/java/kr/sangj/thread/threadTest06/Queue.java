@@ -55,6 +55,7 @@ public class Queue<E> {
 		try {
 			
 			notifyAll();
+			
 		} catch (Exception e2) {
 
 		}		

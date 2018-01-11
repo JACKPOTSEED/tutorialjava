@@ -11,7 +11,7 @@ public class ThreadAdd2 extends Thread {
 	@Override
 	public void run() {
 	
-		queue.add(3);		
+		queue.add(7);		
 		
 		/*queue.add(73);*/
 	}	

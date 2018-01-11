@@ -118,10 +118,10 @@ public class FileDao {
 		name = name.trim();
 		
 		int age = 0;
-		age = randomAccessFile .readInt();
+		age = randomAccessFile.readInt();
 		
 		double weight = 0.0;
-		weight = randomAccessFile .readDouble();
+		weight = randomAccessFile.readDouble();
 		
 		String telephone = "";
 		for (int i = 0; i < (TELEPHONE_LENGTH/2); i++) {

@@ -20,6 +20,9 @@ import main.java.kr.sangj.thread.threadTest07.DataStack;
 import main.java.kr.sangj.thread.threadTest07.User1;
 import main.java.kr.sangj.thread.threadTest07.User2;
 import main.java.kr.sangj.thread.threadTest09.DemonExam;
+import main.java.kr.sangj.thread.threadTest10.NewsPaper;
+import main.java.kr.sangj.thread.threadTest10.NewsReader;
+import main.java.kr.sangj.thread.threadTest10.NewsWriter;
 
 public class ThreadMain {
 
@@ -258,19 +261,56 @@ public class ThreadMain {
 		 */
 		
 		Queue<Integer> queue = new Queue<Integer>();
-				
-		ThreadAdd threadAdd = new ThreadAdd();		
+		
 		ThreadGet threadGet = new ThreadGet();
+		ThreadAdd threadAdd = new ThreadAdd();			
 		ThreadAdd2 threadAdd2 = new ThreadAdd2();
 		
-		threadAdd.setThreadAdd(queue);
 		threadGet.setThreadGet(queue);
+		threadAdd.setThreadAdd(queue);		
 		threadAdd2.setThreadAdd(queue);
 		
-		threadAdd.start();			
+		
 		threadGet.start();
-		//밑에 줄을 주석하면 무한 wait에 걸린다.
-		threadAdd2.start();				
+		
+		try {
+			
+			Thread.sleep(2000);
+			
+		} catch (InterruptedException e) {
+		
+			e.printStackTrace();
+		}
+		
+		threadAdd.start();		
+		
+		/*
+		 * 좀 많이 극단적인 예제이지만 만약 쓰레드를 실행시켯을때 예기치 않은 상황이 발생할 수 도 있다.
+		 * 
+		 * threadGet.start();						
+		
+		try {
+			
+			Thread.sleep(500);
+			
+		} catch (InterruptedException e) {
+
+			e.printStackTrace();
+		}
+		
+		threadAdd2.start();		
+		
+		try {
+			
+			Thread.sleep(2000);
+			
+		} catch (InterruptedException e) {
+
+			e.printStackTrace();
+		}
+		
+		threadAdd.start();*/
+				
 				
 		/**
 		 * 데몬쓰레드
@@ -292,5 +332,29 @@ public class ThreadMain {
 		}
 		
 		System.out.println("프로그램을 종료합니다.");*/
+		
+		/**
+		 * 공유객체와 동기화 wait notify를 이용한 스레드의 상태제어
+		 */
+		
+		/*NewsPaper newsPaper = new NewsPaper();
+		
+		Thread t1 = new Thread(new NewsWriter(newsPaper,"오늘의 날씨는 춥습니다."));
+		Thread t2 = new Thread(new NewsReader(newsPaper));
+		Thread t3 = new Thread(new NewsReader(newsPaper));		
+		
+		t2.start();	
+		
+		try {
+			
+			Thread.sleep(1000);
+			
+		} catch (InterruptedException e1) {
+
+			e1.printStackTrace();
+		}
+		
+		t1.start();		
+		t3.start();	*/	
 	}
 }

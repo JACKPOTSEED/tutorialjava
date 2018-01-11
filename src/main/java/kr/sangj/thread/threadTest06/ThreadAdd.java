@@ -13,7 +13,10 @@ public class ThreadAdd extends Thread {
 	public void run() {
 
 		queue.add(3);
+		
 		queue.add(5);
+		
+		queue.add(534);
 		/*queue.add(36);*/
 		
 		/*queue.add(73);*/
