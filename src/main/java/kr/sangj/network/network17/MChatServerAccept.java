@@ -32,6 +32,8 @@ public class MChatServerAccept implements Runnable {
 			
 				e.printStackTrace();
 			}		
-		}		
+		}
+		
+		//TODO 서버소켓 닫기 추가
 	}
 }

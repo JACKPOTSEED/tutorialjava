@@ -37,10 +37,11 @@ public class MChatClientSender implements Runnable{
 			}
 			
 			dos.close();
+			
 							
 		} catch (IOException e) {
 
 			e.printStackTrace();
-		}					
+		} // finally ¹® »ç¿ë				
 	}
 }

@@ -31,15 +31,43 @@ public class MChatServerSendRcv implements Runnable{
 			
 			mChatManagement.add(dos);
 			
-			while (dis != null) {
-							
-				mChatManagement.sendToAll(dis.readUTF());				
+			while (true) {
+						
+				String msg = dis.readUTF();
+				
+				if (msg != null || "".equals(msg)) {
+					
+					break;
+				}
+				
+				mChatManagement.sendToAll(msg);				
 			}
 						
 		} catch (IOException e) {
 			
 			e.printStackTrace();
 				
+		} finally {
+			
+			try {
+				dos.close();
+			} catch (IOException e) {
+			
+				e.printStackTrace();
+			}
+			try {
+				dis.close();
+			} catch (IOException e) {
+			
+				e.printStackTrace();
+			}
+			try {
+				socket.close();
+			} catch (IOException e) {
+			
+				e.printStackTrace();
+			}
+			// ¿©±â¼­ remove MChatMagenagemetn
 		}
 	}
 }

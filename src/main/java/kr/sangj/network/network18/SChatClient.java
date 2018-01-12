@@ -20,13 +20,25 @@ public class SChatClient {
 			dos = new DataOutputStream(socket.getOutputStream());
 			
 			System.out.println("클라이언트 : 연결성공했다!!!");
-						
-			Scanner scanner = new Scanner(System.in);
-			String str = scanner.nextLine();
 			
-			dos.writeUTF(str);
-			dos.flush();
+			while (true) {
+				
+				Scanner scanner = new Scanner(System.in);
+				String str = scanner.nextLine();
+				
+				if (str.equals("exit")) {
+					
+					break;
+				}
+				
+				dos.writeUTF(str);
+				dos.flush();				
+			}
+			
+			//TODO exit 시 close 해서 EOFException connectionreset 에러나는거 해결해 봐야함 
+			dos.writeUTF("exit");
 			dos.close();
+			socket.close();
 								
 		} catch (Exception e) {
 

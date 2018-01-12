@@ -21,8 +21,17 @@ public class SChatServerRcv implements Runnable {
 		try {
 			
 			dis = new DataInputStream(socket.getInputStream());
-			System.out.println("서버 : " + dis.readUTF());
 			
+			while (dis != null) {
+							
+				System.out.println("서버 : " + dis.readUTF());				
+			}
+			
+			System.out.println("서버  while null 탐");
+			
+			dis.close();
+			socket.close();
+						
 		} catch (IOException e) {
 			
 			e.printStackTrace();
