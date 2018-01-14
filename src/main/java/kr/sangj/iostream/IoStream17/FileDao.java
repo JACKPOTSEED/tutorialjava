@@ -110,7 +110,7 @@ public class FileDao {
 		String name = "";
 					
 		randomAccessFile.seek((index * RECORD_LENGTH) + RECORD_COUNT_LENGTH);
-		for (int i = 0; i < (NAME_LENGTH/2); i++) {
+		for (int i = 0; i < (NAME_LENGTH/2); i++) { 
 			
 			name += randomAccessFile.readChar();
 		}
